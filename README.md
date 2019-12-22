@@ -1,11 +1,13 @@
 # MyTestApp
 
 ### For production(android):
-```cd android
+```
+cd android
 ./gradlew assembleRelease
 ```
 
 ### For development
-```npm start
+```
+npm start
 react-native run-android
 ```
