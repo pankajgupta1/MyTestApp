@@ -14,14 +14,14 @@ export default BidBox = ({moneyAvailable, setBiddedAmount, moneyInBidBox, onBidL
     const tokenWeights = [ 1, 5, 10, 50, 100, 500 ]
     return (
         <View style={styles.container}>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.row}>
                 {tokenWeights.map(weight => {
-                    if(weight < moneyAvailable)
+                    if(weight <= moneyAvailable)
                     return <Token weight={weight} setBiddedAmount={setBiddedAmount}/>
                 })}
             </ScrollView>
-            <CountBox dollars={moneyInBidBox} />
-            <Button text={"Done"} onPressButton={onBidLocked} />
+            <CountBox dollars={`$${moneyInBidBox}`} />
+            {moneyInBidBox >= 10 && <Button text={"Done"} onPressButton={onBidLocked} />}
         </View>
     )
 }
@@ -31,5 +31,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 20,
         margin: 15,
+    },
+    row: {
+        paddingBottom: 20
     }
 })

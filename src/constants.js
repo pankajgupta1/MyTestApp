@@ -35,7 +35,6 @@ function shuffle(deck) {
 }
 
 export const getDeckOf3Packs = () => {
-    console.log('test')
     let deck1 = getDeck()
     let deck2 = getDeck()
     let deck3 = getDeck()

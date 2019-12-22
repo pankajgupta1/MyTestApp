@@ -22,13 +22,11 @@ export default Home = () => {
     }, [1])
 
     const setBiddedAmount = bidded => {
-        if (moneyInBidBox <= moneyAvailable && (moneyInBidBox + bidded) <= moneyAvailable) {
-            setMoneyInBidBox(moneyInBidBox + bidded)
-        }
+        setMoneyInBidBox(moneyInBidBox + bidded)
+        setMoneyAvailable(moneyAvailable - bidded)
     }
 
     const onBidLocked = () => {
-        setMoneyAvailable(moneyAvailable - moneyInBidBox)
         setBidMoneyLocked(true)
         const drawnCards = drawFourCards()
         setPlayerCards([...playerCards, drawnCards[0], drawnCards[1]])
