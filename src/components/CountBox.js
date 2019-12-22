@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-export default DollarBox = ({dollars}) => {
+export default CountBox = ({dollars}) => {
     return (
         <View style={styles.wrapper}>
-            <Text>{`$${dollars}`}</Text>
+            <Text>{`${dollars}`}</Text>
         </View>
     )
 }

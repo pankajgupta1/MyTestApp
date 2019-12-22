@@ -30,7 +30,7 @@ const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
@@ -42,8 +42,12 @@ const App: () => React$Node = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   scrollView: {
     backgroundColor: Colors.lighter,
+    flexGrow: 1,
   },
   engine: {
     position: 'absolute',

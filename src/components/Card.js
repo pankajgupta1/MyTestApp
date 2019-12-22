@@ -1,11 +1,11 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-export default Card = ({value, suit}) => {
+export default Card = ({data, cardStyle}) => {
     return (
-        <View style={styles.wrapper}>
-            <Text>{value}</Text>
-            <Text>{suit}</Text>
+        <View style={[styles.wrapper, cardStyle]}>
+            <Text>{data.Value}</Text>
+            <Text>{data.Suit}</Text>
         </View>
     )
 }
@@ -19,5 +19,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         height: 140,
         width: 80,
+        backgroundColor: 'white'
     }
 })

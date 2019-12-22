@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 import Button from '../components/Button'
 import Token from '../components/Token'
-import DollarBox from '../components/DollarBox'
+import CountBox from '../components/CountBox'
 
 
 export default BidBox = ({moneyAvailable, setBiddedAmount, moneyInBidBox, onBidLocked}) => {
@@ -20,7 +20,7 @@ export default BidBox = ({moneyAvailable, setBiddedAmount, moneyInBidBox, onBidL
                     return <Token weight={weight} setBiddedAmount={setBiddedAmount}/>
                 })}
             </ScrollView>
-            <DollarBox dollars={moneyInBidBox} />
+            <CountBox dollars={moneyInBidBox} />
             <Button text={"Done"} onPressButton={onBidLocked} />
         </View>
     )
